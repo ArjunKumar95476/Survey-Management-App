@@ -1,0 +1,36 @@
+family serve project dataBase info
+
+DataBase Name: familyserve
+
+There are two tables in familyserve DataBase
+1. familyregister
+2.familyservedata
+
+=> field of familyregister table-
+
+create table familyregister(
+  id int auto-incremented not null,
+  name varchar(45) not null,
+  mobilenumber varchar(45) not null,
+  email varchar(45) not null,
+  password varchar(45) not null,
+  primarykey(id)
+  );
+
+=> field of familyservedata table-
+
+create table familyservedata(
+  id int auto-incremented not null,
+  yourname varchar(45)not null,
+  yourage  int not null,
+  gender varchar(45) not null,
+  fathername varchar(45)not null,
+  mothername varchar(45) not null,
+  sibling_number int not null,
+  brother_number int not null,
+  sister_number int not null,
+  father_prof varchar(45) not null,
+  mother_prof varchar(45)not null,
+  whatyoudo varchar(45) not null,
+  primarykey(id)
+  );

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>//user form</title>
+<style type="text/css">
+body
+{
+display: flex; flex-direction:column;justify-content: center;align-items: center;gap:40px; background-color: wheat;}
+form
+{
+border: none;padding: 50px 40px; background-color: gray; border-radius: 15px;} td{color:white; text-shadow: 1px 1px 1px black;}
+input
+{
+padding: 10px 15px;border:none;border-radius:15px; font-family: sans-serif;}select{padding: 10px 20px;border-radius:15px;}
+.link a
+{
+ text-decoration: none;
+ font-size: 20px;
+ font-weight: 700;
+ background-color: blue;
+ padding: 10px 30px;
+ color: white;
+ border-radius: 15px;
+}
+</style>
+</head>
+<body>
+<div class="heading"><h1>Fill Your Family Data</h1> <h4>This Serve form will be filled by a Student only</h4></div>
+<div class="formdiv">
+<form action="adduser.jsp" method="post">  
+<table>  
+<tr><td><label>Enter Your Name:</label></td><td><input type="text" name="yourname"/></td></tr>     
+<tr><td><label>Enter Your Age:</label></td><td><input type="text" name="yourage"/></td></tr>     
+<tr><td><label>Enter Your Gender:</label></td><td><input type="radio"name="gender" value="Male"/>Male<input type="radio" name="gender" value="Female"/>Female</td></tr>     
+<tr><td><label>Enter Your FatherName:</label></td><td><input type="text" name="fathername"/></td></tr>     
+<tr><td><label>Enter Your MotherName:</label></td><td><input type="text" name="mothername"/></td></tr>     
+<tr><td><label>How Many Sibling You Have:</label></td><td><input type="text" name="sibling_number"/></td></tr>     
+<tr><td><label>How Many Brother You Have:</label></td><td><input type="text" name="brother_number"/></td></tr>     
+<tr><td><label>How Many Sister You Have:</label></td><td><input type="text" name="sister_number"/></td></tr>     
+<tr><td><label>Enter Your Father Profession:</label></td><td><input type="text" name="father_prof"/></td></tr>     
+<tr><td><label>Enter Your Mother Profession:</label></td><td><input type="text" name="mother_prof"/></td></tr>     
+<tr><td><label>What You Do:</label></td><td><select name="whatyoudo" style="width: 190px;">
+<option>Study</option>
+<option>Job</option>
+<option>Nothing</option>
+</select></td></tr>     
+<tr><td colspan="2"><input type="submit" value="Save Information" style="background: blue;color:white;"/></td></tr>  
+</table>  
+</form> 
+</div> 
+<div class="link"><a href="viewusers.jsp">View Details</a></div>  
+</body>
+</html>

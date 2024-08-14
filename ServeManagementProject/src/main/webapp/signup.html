@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .mainclass{
+            display: flex;
+            background-color: aqua;
+        }
+        .content{display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(14, 215, 215);
+        }
+        .form{width: 60%;}
+        .inputGroup1{
+        display: flex;
+        flex-direction: column;
+
+     } 
+     .label{font-size: 20px; text-shadow: 1px 1px 1px black;}
+     .input{padding: 10px 10px;  border-radius: 10px; border: none; outline: none; box-shadow: 1px 1px 1px black;} 
+     .heading h2,h4{text-shadow: 1px 1px 1px black;} 
+     .btn1{background-color: blue; padding: 10px 30px; border: none; border-radius: 10px; color: white; margin-left: 220px;}
+     .p{  font-size: 30px;color:red; text-shadow: 1px 1px 1px black;}
+    </style>
+</head>
+<body>
+   <div class="container-fluid mainclass">
+    <p class="p"><i class="bi bi-box-arrow-left"></i></p>
+    <div class="container content">
+        <div class="heading py-3"><h2>Prime Minister Family Servey Scheme 2023-24</h2></div>
+        <div class="heading py-3"><h4>Sign Up Here ?</h2></div>
+        <form action="" class="form" id="form" onsubmit="return myfun()">
+            <div class="form-group">
+                <label for="" class="label">Full Name</label>
+                <div class="input-group inputGroup1">
+                    <input type="text" class="input" id="name" name="name">
+                    <span id="nameMessage"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="label">Mobile Number</label>
+                <div class="input-group inputGroup1">
+                   <input type="text" class="input" id="mobilenumber" name="mobilenumber"> 
+                   <span id="mobileMessage"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="label">Email</label>
+                <div class="input-group inputGroup1">
+                    <input type="email" class="input" id="email" name="email">
+                    <span id="emailMessage"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="label">Password</label>
+                <div class="input-group inputGroup1">
+                    <input type="password" class="input" id="pass" name="pass">
+                    <span id="passMessage"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="submit" class="btn1" value="Save & Continue">
+                </div>
+            </div>
+        </form>
+    </div>
+   </div> 
+   <script>
+    function myfun()
+    {
+    const nameEle=document.getElementById("name").value;
+    const mobileEle=document.getElementById("mobilenumber").value;
+    const emailEle=document.getElementById("email").value;
+    const passEle=document.getElementById("pass").value;
+    if(nameEle=="")
+    {
+        document.getElementById("nameMessage").innerHTML="**Please fill name";
+        document.getElementById("nameMessage").style.color="red";
+        return false;
+    }
+    else{
+        if(isNaN(nameEle))
+        {
+            document.getElementById("nameMessage").innerHTML="DONE";
+            document.getElementById("nameMessage").style.color="green";
+            if(mobileEle=="")
+            {
+                document.getElementById("mobileMessage").innerHTML="**Please fill mobile Number";
+                document.getElementById("mobileMessage").style.color="red";
+                return false;
+            }
+            else{
+                if(!isNaN(mobileEle)&&mobileEle.length==10)
+                {
+                    document.getElementById("mobileMessage").innerHTML="DONE";
+                    document.getElementById("mobileMessage").style.color="green";
+                    if(emailEle=="")
+                    {
+                        document.getElementById("emailMessage").innerHTML="**Please fill email in format - abc@gmail.com";
+                        document.getElementById("emailMessage").style.color="red";
+                        return false;
+                    }
+                    else{
+                        document.getElementById("emailMessage").innerHTML="DONE";
+                        document.getElementById("emailMessage").style.color="green";
+                       if(passEle=="")
+                       {
+                        document.getElementById("passMessage").innerHTML="**Please fill password";
+                        document.getElementById("passMessage").style.color="red";
+                        return false;
+                       }
+                       else
+                       {
+                        if(isNaN(passEle)&&passEle.length>=8)
+                        {
+                             document.getElementById("passMessage").innerHTML="DONE";
+                             document.getElementById("passMessage").style.color="green";
+                             return true;
+                        }
+                        else
+                        {
+                            document.getElementById("passMessage").innerHTML="password would be equal and greater than 8 , with the help numeric , alphabetic and symbol";
+                            document.getElementById("passMessage").style.color="red";
+                            return false; 
+                        }
+                       }
+                    }
+                }
+                else{
+                    document.getElementById("mobileMessage").innerHTML="Mobile Number should be 10 numeric character";
+                    document.getElementById("mobileMessage").style.color="red";
+                    return false;
+                }
+            }
+        }
+        else{
+            document.getElementById("nameMessage").innerHTML="Numeric Character is not Allowed";
+            document.getElementById("nameMessage").style.color="red";
+            return false;
+        }
+        
+    }
+    return false;
+    }
+   </script>
+</body>
+</html>
